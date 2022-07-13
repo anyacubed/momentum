@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="assets/favicon.ico" rel="shortcut icon" />
+  <link rel="stylesheet" href="css/owfont-regular.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>momentum</title>
+</head>
+<body>
+  <header class="header">
+    <div class="player">
+      <div class="player-controls">
+        <button class="play-prev player-icon"></button>
+        <button class="play player-icon"></button>
+        <button class="play-next player-icon"></button>
+        <div class="advanced-player">
+          <div class="play-container">
+            <div class="toggle-play progress-play advanced-player-item"></div>
+          </div>
+          <div class="track-time">
+            <div class="current">0:00</div>
+            <div class="divider">/</div>
+            <div class="length">0:00</div>
+          </div>
+          <div class="top-progress-panel">
+            <div>
+              <p class="track-title">track title</p>
+            </div>
+            <div class="timeline">
+              <div class="progress"></div>
+            </div>
+          </div>
+          <div class="volume-container">
+            <div class="volume-button advanced-player-item">
+              <div class="volume-on"><i class="fa fa-volume-up fa-sm"></i></div>
+              <div class="volume-off"><i class="fa fa-volume-off fa-sm"></i></div>
+            </div>
+            <div class="volume-line">
+              <div class="volume-progress"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="play-list"></ul>
+    </div>
+    <div class="weather">
+      <input type="text" class="city" placeholder="[Enter city]" />
+      <i class="weather-icon owf"></i>
+      <div class="weather-error"></div>
+      <div class="description-container">
+        <span class="temperature"></span>
+        <span class="weather-description"></span>
+      </div>
+      <div class="wind"></div>
+      <div class="humidity"></div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="slider-icons">
+      <button class="slide-prev slider-icon"></button>
+      <button class="slide-next slider-icon"></button>
+    </div>
+    <time class="time"></time>
+    <date class="date"></date>
+    <div class="greeting-container">
+      <span class="greeting"></span>
+      <input type="text" class="name" placeholder="[Enter name]"/>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="settings-pop-up">
+      <div class="blocks-visibility">
+        <div class="pop-up-line">
+          <p>Time</p>
+          <label class="switch">
+            <input class="time-visibility green-on" type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="pop-up-line">
+          <p>Date</p>
+          <label class="switch">
+            <input class="date-visibility green-on" type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="pop-up-line">
+          <p>Greeting</p>
+          <label class="switch">
+            <input class="greeting-container-visibility green-on" type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="pop-up-line">
+          <p>Quotes</p>
+          <label class="switch">
+            <input class="footer-center-visibility green-on" type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="pop-up-line">
+          <p>Weather</p>
+          <label class="switch">
+            <input class="weather-visibility green-on" type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="pop-up-line">
+          <p>Audio</p>
+          <label class="switch">
+            <input class="player-visibility green-on" type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="pop-up-line">
+          <p>Todo list</p>
+          <label class="switch">
+            <input class="todo-button-visibility green-on" type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="footer-left"><i id="settings-button" class="fa fa-cogs fa-2x"></i></div>
+    <div class="footer-center">
+      <button class="change-quote"></button>
+      <div>
+        <div class="quote"></div>
+        <div class="author"></div>
+      </div>
+    </div>
+    <div class="footer-right">
+      <div class="todo-pop-up">
+        <div class="todo-top">
+          <div class="todo-top-left">
+            <div class="todo-select">
+              <span>Today</span>
+              <div class="todo-select-options">
+                <span class="todo-select-option">Inbox 0</span>
+                <span class="todo-select-option">Today 0</span>
+                <span class="todo-select-option">Done 0</span>
+              </div>
+            </div>
+            <div class="todo-select-arrow"></div>
+          </div>
+          <div class="todo-top-right"><i class="fa fa-ellipsis-h fa-sm"></i></div>
+          <div class="todo-top-right-pop-up">
+            <span class="todo-settings">Settings</span>
+          </div>
+        </div>
+        <div class="todo-bottom">
+          <p class="todo-bottom-p1">Add a todo to get started</p>
+          <p class="todo-bottom-p2">Switch to inbox ></p>
+          <button class="new-todo-button">New Todo</button>
+          <input class="todo-input" type="text" placeholder="New Todo">
+        </div>
+      </div>
+      <button class="todo-button">
+        <p>Todo</p>
+      </button>
+    </div>
+  </footer>
+  <script src="js/settings.js"></script>
+  <script type="module" src="js/playlist.js"></script>
+  <script src="js/greetings.js"></script>
+  <script src="js/time-date.js"></script>
+  <script src="js/background-img.js"></script>
+  <script src="js/weather-widget.js"></script>
+  <script src="js/quote-widget.js"></script>
+  <script type="module" src="js/audio-player.js"></script>
+  <script src="js/translation.js"></script>
+</body>
+</html>
