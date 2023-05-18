@@ -1,0 +1,13 @@
+.todo-footer {
+  padding: 8px 21px 18px;
+}
+
+.todo-footer-input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 0;
+  color: white;
+}

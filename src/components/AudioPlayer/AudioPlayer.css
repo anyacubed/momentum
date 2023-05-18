@@ -1,0 +1,44 @@
+.audio-player {
+
+}
+
+.audio-player-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+.play-list {
+  padding: 0;
+  margin: 0;
+}
+
+.play-list-item {
+  position: relative;
+  width: fit-content;
+  padding: 5px;
+  padding-left: 20px;
+  list-style: none;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.play-list-item:hover {
+  opacity: 1;
+}
+
+.play-list-item::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-weight: 900;
+}
+
+.active,
+.active::before {
+  opacity: 1;
+}

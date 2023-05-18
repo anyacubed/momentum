@@ -1,0 +1,16 @@
+.greeting {
+  font-size: 40px;
+}
+
+.user-name-input {
+  font-size: 40px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color:#fff;
+}
+
+.user-name-input::placeholder {
+  color: #fff;
+  opacity: 0.8;
+}

@@ -1,0 +1,138 @@
+.advanced-player {
+  height: 40px;
+  width: 270px;
+  background: transparent;
+  border: 4px solid rgb(255,255,255, .8);
+  margin-left: 10px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: pointer;
+}
+
+.progress-play {
+  cursor: pointer;
+  border: 7px solid transparent;
+  border-left: 13px solid white;
+}
+
+.advanced-player-item {
+  opacity: 0.8;
+  cursor: pointer;
+  transition: .3s;
+  background-color: transparent;
+}
+
+.advanced-player-item:hover {
+  opacity: 1;
+}
+
+.advanced-player-item:active {
+  transform: scale(1.1);
+}
+
+.progress-pause {
+  position: relative;
+  height: 14px;
+  width: 20px;
+  cursor: pointer;
+  border: none;
+}
+
+.progress-pause:before {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  background: white;
+  content: '';
+  height: 14px;
+  width: 3px;
+}
+
+.progress-pause:after {
+  position: absolute;
+  top: 0;
+  right: 8px;
+  background: white;
+  content: '';
+  height: 14px;
+  width: 3px;
+}
+
+.progress-pause:hover {
+  transform: scale(1.1);
+}
+
+.progress-bar {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.track-title {
+  font-size: 11px;
+  color: white;
+}
+
+.timeline {
+  background: white;
+  opacity: 0.8;
+  width: 85px;
+  height: 5px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.progress {
+  background: #C5B358;
+  width: 0%;
+  height: 100%;
+  transition: 0s;
+}
+
+.volume-container {
+  cursor: pointer;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.volume-button {
+  width: 25px;
+  height: 25px;
+  background-size: 25px 25px;
+  background-image: url('../svg/volume-on.svg');
+  border: none;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.volume-off {
+  background-image: url('../svg/volume-off.svg');
+}
+
+.volume-line {
+  background: white;
+  opacity: 0.8;
+  width: 35px;
+  height: 5px;
+  cursor: pointer;
+  border-radius: 25px;
+  margin-bottom: 2px;
+}
+
+.volume-progress {
+  background: #C5B358;
+  width: 0%;
+  height: 100%;
+  transition: 0.25s;
+}
+
+.volume {
+  transform: scale(0.7);
+}

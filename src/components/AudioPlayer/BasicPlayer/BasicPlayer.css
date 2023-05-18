@@ -1,0 +1,46 @@
+.basic-player {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.player-icon {
+  width: 32px;
+  height: 32px;
+  background-size: 32px 32px;
+  background-color: transparent;
+  border: none;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.player-icon:hover {
+  opacity: 1;
+}
+
+.player-icon:active {
+  transform: scale(1.1);
+}
+
+.paused {
+  width: 40px;
+  height: 40px;
+  background-size: 40px 40px;
+  background-image: url('../svg/play.svg');
+}
+
+.playing {
+  width: 40px;
+  height: 40px;
+  background-size: 40px 40px;
+  background-image: url('../svg/pause.svg');
+}
+
+.prev {
+  background-image: url('../svg/prev.svg');
+}
+
+.next {
+  background-image: url('../svg/next.svg');
+}

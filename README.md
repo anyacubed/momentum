@@ -1,5 +1,7 @@
 # momentum-app
 
-`HTML, CSS, JS`
+Stack: `React, TS, CSS`
 
-done in Oct, 2021
+## Usage
+* Run `npm install` to fetch all dependencies
+* Run `npm start` to start the app in the dev mode

@@ -1,0 +1,22 @@
+.todo-list-item {
+  list-style: none;
+}
+
+.todo-list-item-label {
+  padding-left: 21px;
+  padding-right: 8px;
+  position: relative;
+  top: 1px;
+}
+
+.todo-list-item-input {
+  margin: 0;
+}
+
+.todo-list-item-value {
+  text-decoration: none;
+}
+
+.todo-list-item-value.checked {
+  text-decoration: line-through;
+}
