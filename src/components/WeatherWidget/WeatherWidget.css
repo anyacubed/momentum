@@ -2,6 +2,10 @@
   width: 180px;
 }
 
+.weather-container.hidden {
+  display: none;
+}
+
 .city {
   width: 170px;
   height: 34px;
@@ -22,6 +26,7 @@
 .summary {
   display: flex;
   flex-direction: column;
+  gap: 5px;
 }
 
 .summary-item-title {

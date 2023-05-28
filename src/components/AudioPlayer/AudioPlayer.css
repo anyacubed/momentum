@@ -1,5 +1,5 @@
-.audio-player {
-
+.audio-player.hidden {
+  display: none;
 }
 
 .audio-player-controls {
@@ -10,12 +10,12 @@
   margin-bottom: 20px;
 }
 
-.play-list {
+.playlist {
   padding: 0;
   margin: 0;
 }
 
-.play-list-item {
+.playlist-item {
   position: relative;
   width: fit-content;
   padding: 5px;
@@ -26,11 +26,11 @@
   transition: 0.3s;
 }
 
-.play-list-item:hover {
+.playlist-item:hover {
   opacity: 1;
 }
 
-.play-list-item::before {
+.playlist-item::before {
   content: '\2713';
   position: absolute;
   left: 0;

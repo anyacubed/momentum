@@ -2,8 +2,12 @@
   font-size: 40px;
 }
 
+.greeting.hidden {
+  display: none;
+}
+
 .user-name-input {
-  font-size: 40px;
+  /* font-size: 40px; */
   background-color: transparent;
   border: none;
   outline: none;

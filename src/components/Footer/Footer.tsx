@@ -7,9 +7,9 @@ import './Footer.css';
 const Footer: FC = () => {
   return (
     <footer className='footer'>
-      <div className='footer-bottom bottom-left'><Settings /></div>
-      <div className='footer-bottom bottom-center'><Quotes /></div>
-      <div className='footer-bottom bottom-right'><Todo /></div>
+      <div><Settings /></div>
+      <div><Quotes /></div>
+      <div><Todo /></div>
     </footer>
   );
 }

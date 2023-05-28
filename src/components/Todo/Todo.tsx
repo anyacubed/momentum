@@ -1,5 +1,7 @@
 import { FC, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { ModeStateI, TodoItemI } from '../../interfaces';
+import { RootState } from '../../store/store';
 import { TodoHeader } from './TodoHeader/TodoHeader';
 import { TodoList } from './TodoList/TodoList';
 import { TodoFooter } from './TodoFooter/TodoFooter';
@@ -40,6 +42,8 @@ const Todo: FC = () => {
     done: []
   });
 
+  const { isTodoDisplayed } = useSelector((state: RootState) => state.display);
+
   function toggleTodoModal(): void {
     setIsTodoModalOpen(!isTodoModalOpen);
   }
@@ -56,6 +60,14 @@ const Todo: FC = () => {
       });
     }
   };
+
+  function containerClassName(): string {
+    const classes: string[] = ['todo-container'];
+
+    !isTodoDisplayed && classes.push('hidden');
+
+    return classes.join(' ');
+  }
 
   // useEffect(() => {
   //   const moveCompletedTodos = (): void => {
@@ -90,14 +102,14 @@ const Todo: FC = () => {
   console.log(todoList)
 
   return (
-    <>
+    <div className={containerClassName()}>
       <button className='todo-icon' onClick={toggleTodoModal}>Todo</button>
       {isTodoModalOpen && <div className='todo-modal'>
         <TodoHeader currentMode={currentMode} changeMode={changeMode} todoList={todoList} />
         <TodoList todoList={todoList} setTodoList={setTodoList} currentMode={currentMode} currentModeState={currentModeState} changeMode={changeMode} verifyNewTodoClick={setIsNewTodoClicked} />
         <TodoFooter isNewTodoClicked={isNewTodoClicked} todoList={todoList} setTodoList={setTodoList} currentMode={currentMode} />
       </div>}
-    </>
+    </div>
   );
 }
 

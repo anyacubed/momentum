@@ -1,12 +1,16 @@
 import { FC, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
 import './TimeDate.css';
 
 const TimeDate: FC = () => {
   const [currentTime, setCurrentTime] = useState<string>('');
   const [currentDate, setCurrentDate] = useState<string>('');
 
+  const { isTimeDisplayed, isDateDisplayed } = useSelector((state: RootState) => state.display);
+
   function setTime(): void {
-    const date = new Date();
+    const date: Date = new Date();
     const current: string = date.toLocaleTimeString([], {
       hourCycle: 'h23',
       hour: '2-digit',
@@ -25,6 +29,22 @@ const TimeDate: FC = () => {
     setCurrentDate(current);
   }
 
+  function timeClassName(): string {
+    const classes: string[] = ['time'];
+
+    !isTimeDisplayed && classes.push('hidden');
+
+    return classes.join(' ');
+  }
+
+  function dateClassName(): string {
+    const classes: string[] = ['date'];
+
+    !isDateDisplayed && classes.push('hidden');
+
+    return classes.join(' ');
+  }
+
   useEffect(() => {
     setTime();
     setDate();
@@ -39,8 +59,8 @@ const TimeDate: FC = () => {
 
   return (
     <>
-      <div className='time'>{currentTime}</div>
-      <div className='date'>{currentDate}</div>
+      <div className={timeClassName()}>{currentTime}</div>
+      <div className={dateClassName()}>{currentDate}</div>
     </>
   );
 }

@@ -1,3 +1,11 @@
+.todo-container {
+  text-align: end;
+}
+
+.todo-container.hidden {
+  display: none;
+}
+
 .todo-icon {
   background-color: transparent;
   border: none;

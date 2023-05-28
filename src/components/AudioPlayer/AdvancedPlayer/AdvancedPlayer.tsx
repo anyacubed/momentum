@@ -12,13 +12,13 @@ const AdvancedPlayer: FC<AdvancedPlayerProps> = ({ isPlaying, togglePlaying }) =
     isVolumeOn ? setIsVolumeOn(false) : setIsVolumeOn(true);
   };
 
-  const className = (): string => {
+  function className(): string {
     const classes: string[] = ['advanced-player-item volume-button'];
 
     isVolumeOn && classes.push('volume-off');
 
     return classes.join(' ');
-  };
+  }
 
   return (
     <div className='advanced-player'>

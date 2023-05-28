@@ -9,7 +9,7 @@ const TodoItem: FC<TodoItemProps> = ({ todo, updateTodoList }) => {
     isDone && classes.push('checked');
 
     return classes.join(' ');
-  };
+  }
 
   return (
     <li className='todo-list-item'>

@@ -1,5 +1,7 @@
 import { FC, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { WeatherI } from '../../interfaces';
+import { RootState } from '../../store/store';
 import './owfont-regular.css';
 import './WeatherWidget.css';
 
@@ -15,7 +17,9 @@ const WeatherWidget: FC = () => {
     error: ''
   });
 
-  async function getWeather() {
+  const { isWeatherDisplayed } = useSelector((state: RootState) => state.display);
+
+  async function getWeather(): Promise<void> {
     if (city !== '') {
       const url: string = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${language}&appid=ee1b35b18a742a851ea9c3d86068cba0&units=metric`;
       const res: Response = await fetch(url);
@@ -45,7 +49,7 @@ const WeatherWidget: FC = () => {
 
   function changeCity(e: React.KeyboardEvent<HTMLInputElement>): void {
     if (e.code === 'Enter') {
-      const inputValue = (e.target as HTMLInputElement).value;
+      const inputValue: string = (e.target as HTMLInputElement).value;
 
       setCity(inputValue);
       localStorage.setItem('city', inputValue);
@@ -53,8 +57,16 @@ const WeatherWidget: FC = () => {
     }
   }
 
+  function containerClassName(): string {
+    const classes: string[] = ['weather-container'];
+
+    !isWeatherDisplayed && classes.push('hidden');
+
+    return classes.join(' ');
+  }
+
   useEffect(() => {
-    let savedCity = localStorage.getItem('city');
+    let savedCity: string | null = localStorage.getItem('city');
 
     if (savedCity !== null) {
       setCity(savedCity);
@@ -63,7 +75,7 @@ const WeatherWidget: FC = () => {
   }, [city]);
 
   return (
-    <div className='weather-container'>
+    <div className={containerClassName()}>
       <input type='text' className='city' placeholder='[Enter city]' defaultValue={city} onKeyDown={changeCity} />
       {city && <div className='summary'>
         <span>{weather.error}</span>

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { BasicPlayerProps } from '../../../interfaces';
-import { playList } from '../playlist';
+import { playlist } from '../playlist';
 import './BasicPlayer.css';
 
 const BasicPlayer: FC<BasicPlayerProps> = ({ isPlaying, togglePlaying, trackIndex, setTrackIndex }) => {
@@ -14,14 +14,14 @@ const BasicPlayer: FC<BasicPlayerProps> = ({ isPlaying, togglePlaying, trackInde
 
   function toPrevTrack(): void {
     if (trackIndex - 1 < 0) {
-      setTrackIndex(playList.length - 1);
+      setTrackIndex(playlist.length - 1);
     } else {
       setTrackIndex(trackIndex - 1);
     }
   }
 
   function toNextTrack(): void {
-    if (trackIndex < playList.length - 1) {
+    if (trackIndex < playlist.length - 1) {
       setTrackIndex(trackIndex + 1);
     } else {
       setTrackIndex(0);

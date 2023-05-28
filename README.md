@@ -1,6 +1,6 @@
 # momentum-app
 
-Stack: `React, TS, CSS`
+Stack: `React, Redux, TS, CSS`
 
 ## Usage
 * Run `npm install` to fetch all dependencies

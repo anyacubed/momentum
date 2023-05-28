@@ -1,4 +1,4 @@
-const playList = [
+export const playlist = [
   {
     title: 'Aqua Caelestis',
     src: 'sounds/Aqua Caelestis.mp3',
@@ -20,4 +20,3 @@ const playList = [
     duration: '01:50'
   }
 ]
-export { playList };

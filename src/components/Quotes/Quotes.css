@@ -5,6 +5,10 @@
   padding: 0 5px;
 }
 
+.quotes-container.hidden {
+  display: none;
+}
+
 .quotes-reload-icon {
   background-image: url('./svg/reload.svg');
   background-color: transparent;

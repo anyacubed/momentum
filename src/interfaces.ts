@@ -75,3 +75,7 @@ export interface TodoFooterProps {
   setTodoList: Dispatch<SetStateAction<Record<string, TodoItemI[]>>>;
   currentMode: string;
 }
+
+export interface DisplayState {
+  [key: string]: boolean;
+}
